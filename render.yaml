@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: vehicle-backend
+    rootDir: Backend
+    runtime: dotnet
+    buildCommand: dotnet restore && dotnet publish -c Release -o out
+    startCommand: dotnet out/VehicleServiceManagement.dll
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+
+  - type: web
+    name: vehicle-ai
+    rootDir: AI
+    runtime: python3
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false   # You'll set this manually
+      - key: CHAT_MODEL
+        value: gemini-2.5-flash-lite
+
+  - type: static
+    name: vehicle-frontend
+    rootDir: Frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://vehicle-backend.onrender.com/api
+      - key: VITE_AI_BASE_URL
+        value: https://vehicle-ai.onrender.com
