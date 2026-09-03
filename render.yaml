@@ -23,7 +23,7 @@ services:
       - key: BACKEND_URL
         value: https://vehicle-backend.onrender.com/api   # Update after backend deploys
 
-  - type: static_site   # <--- Correct type
+  - type: static  # <--- Correct type
     name: vehicle-frontend
     rootDir: Frontend
     buildCommand: npm install && npm run build
