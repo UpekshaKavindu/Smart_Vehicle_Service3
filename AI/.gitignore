@@ -1,0 +1,109 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.pyo
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+.env
+.venv/
+venv.bak/
+
+# Environment variables (sensitive)
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-*
+*.iml
+
+# Logs and databases
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.pid
+*.lock
+
+# Uvicorn / FastAPI
+*.pid
+*.lock
+
+# Jupyter Notebooks (if any)
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing and coverage
+.pytest_cache/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+
+# Profiling data
+*.prof
+*.lprof
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Type hints (mypy)
+.mypy_cache/
+
+# Ruff (linter)
+.ruff_cache/
+
+# pytest
+.pytest_cache/
+
+# Environment variables backup
+.env.backup
+
+# Migration files (if using Alembic - optional)
+# alembic/versions/*
+# !alembic/versions/__init__.py
