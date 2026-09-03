@@ -17,11 +17,13 @@ services:
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: GOOGLE_API_KEY
-        sync: false   # You'll set this manually
+        sync: false   # You'll set this manually in the Render dashboard
       - key: CHAT_MODEL
         value: gemini-2.5-flash-lite
+      - key: BACKEND_URL
+        value: https://vehicle-backend.onrender.com/api   # Update after backend deploys
 
-  - type: static
+  - type: static_site   # <--- Correct type
     name: vehicle-frontend
     rootDir: Frontend
     buildCommand: npm install && npm run build
